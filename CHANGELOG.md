@@ -2,6 +2,8 @@
 
 ### vNEXT
 
+Adds support for UMD and ES2015 modules (tree-shaking)
+
 ### 0.3.0
 
 Changes the middleware and afterware to accept functions instead of objects

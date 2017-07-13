@@ -101,7 +101,7 @@ export function createApolloFetch(params: FetchOptions = {}): ApolloFetch {
     throw httpError as FetchError;
   };
 
-  const apolloFetch: ApolloFetch = <ApolloFetch>Object.assign(
+  const _apolloFetch: ApolloFetch = <ApolloFetch>Object.assign(
     function (request: GraphQLRequest): Promise<FetchResult> {
       const options = {};
       let parseError;
@@ -144,7 +144,7 @@ export function createApolloFetch(params: FetchOptions = {}): ApolloFetch {
           throw new Error('Middleware must be a function');
         }
 
-        return apolloFetch;
+        return _apolloFetch;
       },
       useAfter: (afterware: AfterwareInterface) => {
         if (typeof afterware === 'function') {
@@ -153,12 +153,12 @@ export function createApolloFetch(params: FetchOptions = {}): ApolloFetch {
           throw new Error('Afterware must be a function');
         }
 
-        return apolloFetch;
+        return _apolloFetch;
       },
     },
   );
 
-  return apolloFetch as ApolloFetch;
+  return _apolloFetch;
 }
 
 const apolloFetch = createApolloFetch();

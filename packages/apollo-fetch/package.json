@@ -37,7 +37,7 @@
     "prepublishOnly": "npm run clean && npm run build"
   },
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "github:20matan/isomorphic-fetch"
   },
   "devDependencies": {
     "@types/chai": "^4.0.0",
